@@ -1,0 +1,1019 @@
+/*---------------------------------------------------------
+                           Reset
+---------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Lato&display=swap');
+
+
+
+/* General styling */
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+}
+
+/* Place footer at bottom */
+footer {
+    margin-top: auto;
+}
+
+/*---------------------------------------------------------
+                     Header / Navigation
+---------------------------------------------------------*/
+.header {
+    width: 100%;
+    height: 10vh;
+    line-height: 10vh;
+    position: fixed;
+    z-index: 9999;
+    user-select: none;
+    text-transform: uppercase;
+    background-color: black;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.logo img {
+    max-height: 25vh;
+    padding-top: 10px;
+}
+
+.navigation {
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links {
+    height: 100%;
+    margin-right: 1em;
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+}
+
+.nav-links li{
+    text-align: center;
+    display: flex;
+    
+}
+
+.nav-links #kamp a{
+    background-color: #c39b5f;
+}
+
+.nav-links .hide {
+    display: none;
+}
+
+.nav-links a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 16px; 
+    padding: 0 2em;
+}
+
+.nav-links li a div{
+    background-color: #c39b5f;
+    border-radius: 100%;
+
+}
+
+.nav-links .fab {
+    font-size: 48px;
+}
+
+
+.nav-active {
+    height: 100%;
+    background-color: black;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.nav-socials {
+    justify-content: center;
+}
+
+.nav-socials a {
+    max-width: 43px;
+    display: flex;
+    margin: 5px;
+    padding: 0;
+}
+
+
+.nav-socials img {
+    width: 25%;
+}
+
+
+
+/* Burger menu */
+.burger {
+    display: none;
+    cursor: pointer;
+    align-self: center;
+    margin: 15px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+  
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.intro{
+    padding: 2rem;
+}
+
+.intro img{
+    width: 100%;
+    height: auto;
+}
+
+
+.intro h1{
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.intro h2{
+    color: white;
+    padding-top: 2rem;
+}
+
+.intro p{
+    font-size: 15px;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/*---------------------------------------------------------
+                     BANNER
+---------------------------------------------------------*/
+
+.banner{
+    width: 100%;
+    text-align: center;
+    padding-top: 200px;
+    background-image: url(../img/Baggrundbillede.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.underskrift{
+    font-size: 6rem;
+    font-family:'Herr Von Muellerhoff', cursive;
+    color: #c39b5f;
+    font-weight: 100;
+    line-height: .4;
+    letter-spacing: 5px;
+    opacity: 0;
+    animation: fadeUp .5s forwards;
+    animation-delay: 1.5s;
+}
+
+.first-letter{
+    text-transform: uppercase;
+    font-size: 8rem;
+}
+
+.overskrift{
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .5rem;
+    margin-right: -.5rem;
+    padding-top: 1rem;
+    opacity: 0;
+    animation: scale .5s forwards;
+    animation-delay: .5s;
+}
+
+.lines{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line{
+    width: 100%;
+    max-width: 7.5rem;
+    height: .2rem;
+    background-color: white;
+    position: relative;
+    animation: grow 2s forwards;
+    opacity: 0;
+    animation-delay: .9s;
+}
+
+
+.line-right::before,
+.line-left::before{
+    content: '';
+    position: absolute;
+    top:50%;
+    opacity: 0;
+    transform: translateY(-50%);
+    border: .5rem solid transparent;
+}
+
+.line-left::before{
+    border-right-color: white;
+    right: 0;
+}
+
+.line-left::before{
+    border-left-color: white;
+    left: 0;
+}
+
+.asterisk{
+    font-size: 1.2rem;
+    margin: 0 .5rem;
+    opacity: 0;
+    animation: scale .5s forwards;
+    animation-delay: .5s;
+    color: #c39b5f;
+}
+
+.pickup{
+    font-size: 25px;
+    opacity: 0;
+    animation: fadeUp .5s forwards;
+    animation-delay: .9s;
+    color: white;
+}
+
+/*---------------------------------------------------------
+                     Olie section
+---------------------------------------------------------*/
+
+.main-olie{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.olie{
+    max-width: 1040px;
+        margin: 0 auto;
+}
+
+.olie h2{
+    padding: 2rem;
+    text-align: center;
+    
+}
+
+.olie p{
+    padding: 0 2rem 2rem 2rem;
+    text-align: center;
+    line-height: 1.8;
+    
+    
+}
+
+.jt-olie img{
+    width: 100%;
+    height: auto;
+    display: block;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+}
+
+.btn-container{
+    text-align: center;
+    
+}
+
+#fit{
+    padding-bottom: 2rem;
+}
+
+.læs-mere-btn {
+	background: white;
+	background-color:#ffffff;
+	border:2px solid #949494;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-size:17px;
+	font-weight:bold;
+	padding:7px 9px;
+	text-decoration:none;
+    text-shadow:0px 0px 0px #263666;
+    text-align: center;
+}
+.læs-mere-btn:hover {
+	background:grey;
+    background-color:#ffffff;
+    box-shadow: 2px 2px 10px -5px black;
+}
+.læs-mere-btn:active {
+	position:relative;
+	top:1px;
+}
+
+/*---------------------------------------------------------
+                     Opskrifter 
+---------------------------------------------------------*/
+
+
+.opskrifter h2{
+    padding: 2rem 2rem 2rem 2rem;
+    text-align: center;
+}
+
+.opskrifter img{
+    width: 100%;
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+.opskrifter p{
+    padding: 0 2rem 2rem 2rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/*---------------------------------------------------------
+                     Kampagne
+---------------------------------------------------------*/
+
+.kampagne img{
+    width: 100%;
+    height: auto;
+}
+
+.kampagne h2{
+    padding: 2rem;
+    text-align: center;
+}
+
+.kampagne img{
+    width: 100%;
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+.kampagne p{
+    padding: 0 2rem 2rem 2rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.læs-mere-btn-kamp {
+	background: black;
+	background-color:black;
+	border:2px solid #949494;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-size:17px;
+	font-weight:bold;
+	padding:7px 9px;
+	text-decoration:none;
+    text-shadow:0px 0px 0px #263666;
+    text-align: center;
+}
+.læs-mere-btn-kamp:hover {
+	background:grey;
+    background-color:black;
+    box-shadow: 2px 2px 10px -5px black;
+}
+.læs-mere-btn-kamp:active {
+	position:relative;
+	top:1px;
+}
+
+#pad{
+    padding-bottom: 2rem;
+}
+
+/*---------------------------------------------------------
+                        Trøffelolie - site
+---------------------------------------------------------*/
+
+.olie-page{
+    background-color: black;
+}
+
+.olie-page h1{
+    color: white;
+    text-align: center;
+    padding: 100px 0 100px 0;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+.olie-page img{
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+}
+
+.img-container{
+    background-color: white;
+}
+
+.bg-img img{
+    width: 50%;
+    height: auto;
+    margin-top: 70px;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+.img-container h2{
+    text-align: center;
+    padding: 2rem;
+    color: white;
+}
+
+.img-container p{
+    padding: 0 2rem 2rem 2rem;
+    text-align: center;
+    line-height: 1.8;
+    color: white;
+}
+
+.img-container p a{
+    color: white;
+    text-transform: uppercase;
+}
+
+.text-container{
+    background-color: black;
+}
+
+.text-container h2{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+
+/*---------------------------------------------------------
+                     Kampagne side
+---------------------------------------------------------*/
+.kampagne{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kampagne-intro{
+    background-color: black;
+    padding: 0 2rem 0 2rem;
+}
+
+.kampagne-intro h1{
+    padding: 6rem 0rem 0rem 0;
+    text-align: center;
+    color: white;
+}
+
+.kampagne-intro p{
+    color:white;
+    text-align: center;
+    padding: 2rem 0 2rem 0;
+}
+
+.kampagne-intro img{
+    width: 100%;
+    height: auto;
+}
+
+.kampagne-intro h2{
+    color: white;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+#kampagner-h{
+    padding-bottom: 2rem;
+}
+
+.truffle{
+    background-color: black;
+}
+
+.truffle img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+/*---------------------------------------------------------
+                     Prøvepakke site
+---------------------------------------------------------*/
+  
+.konstruktion{
+    background-color: black;
+   
+}
+
+.konstruktion h1{
+    color: white;
+    padding: 8rem 0 0 0;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.konstruktion img{
+  display: block;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;  
+}
+
+.konstruktion p{
+    color: white;
+}
+
+.konstruktion a{
+    color: white;
+   
+}
+
+
+/*---------------------------------------------------------
+                     Opskrifter site
+---------------------------------------------------------*/
+
+.opskrift-intro h1{
+    padding-top: 8rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+.card {
+    transition: 0.3s;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.main-container {
+    margin: 2rem;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.main-container h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.main-container h4 {
+    font-size: 30px;
+    padding: 1rem;
+    margin:0;
+    color: black;
+}
+
+.main-container a:link, a:visited{
+    text-decoration: none;
+}
+
+.main-container a:active{
+    text-decoration: underline;
+}
+
+
+.second-container:hover {
+    transform: scale(1.1);
+}
+
+.second-container {
+    transition: all .2s ease-in-out;
+    background: white;
+    margin: 20px;
+    box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    
+    
+}
+
+.img-1 {
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+
+}
+
+.opskrift-intro p{
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*---------------------------------------------------------
+                          Footer 
+---------------------------------------------------------*/
+footer {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+}
+
+.footer-content p a{
+    color: white;
+}
+
+.footer-content h5 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1em;
+}
+
+.footer-content address {
+    font-size: 0.8em;
+    font-style: normal;
+    line-height: 2em;
+    margin-bottom: 2em;
+    text-decoration: none;
+}
+
+.footer-content > section > p {
+    font-size: 0.8em;
+    line-height: 2em;
+    margin-bottom: 2em;
+    text-decoration: none;
+}
+
+.footer-socials{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-socials a {
+    flex-direction: row;
+    color: white;
+    font-size: 32px;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.copyright {
+    background-color: #555;
+    text-align: center;
+    padding: 0.5em;
+    color: #ccc;
+}
+
+.copyright h6 {
+    font-size: 0.8em;
+}
+
+
+
+
+
+/*---------------------------------------------------------
+                        Media queries
+---------------------------------------------------------*/
+
+/* Burger menu for mobile */
+@media screen and (max-width:890px){
+
+    .main-container{
+        margin: auto;
+    }
+
+    .header {
+        line-height: calc(90vh / 9);
+    }
+
+    .nav-links {
+        min-width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        z-index: -1;
+        transform: translateY(-100%) translateY(-10vh);
+    }
+
+    .nav-links .hide { display: flex; }
+
+    .burger {
+        display: block;
+    }
+  
+    .nav-active {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+
+    .logo{
+        margin-left: 1rem;
+    }
+
+    .opskirft-intro h1{
+        font-size: 4rem;
+        line-height: 1.8;
+        padding-top: 8rem;
+    }
+
+    .konstruktion img{
+        margin: 0 auto;
+        
+    }
+
+   .truffle img{
+    width: 60%;
+   }
+
+    .kampagne-intro h1{
+        font-size: 4rem;
+        line-height: 1.8;
+    }
+
+    .kampagne-intro h2{
+        font-size: 2rem;
+    }
+
+    .kampagne-intro p{
+        font-size: 22px;
+        line-height: 1.8;
+        padding: 2rem 10rem 2rem 10rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .kampagne-intro img{
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .text-container h2{
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+
+    .olie-page h1{
+        font-size: 7rem;
+    }
+
+    .img-container p{
+        padding: 0 15rem 2rem 15rem;
+        text-align: center;
+        line-height: 1.8;
+        color: white;
+    }
+
+    .bg-img img{
+        width: 50%;
+        height: auto;
+        margin-top: 70px;
+        background-color: white;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .olie{
+        padding: 2rem 2rem 0 2rem;
+        
+     }
+
+    .jt-olie img{
+        width: 60%;
+        height: auto;
+        padding-bottom: 2rem;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .olie p{
+        margin: 0 10rem 0rem 10rem;
+        text-align: center;
+    }
+
+    .olie h2{
+        font-size: 2rem;
+    }
+
+    .opskrifter p{
+        padding: 0 15rem 2rem 15rem;
+    }
+
+    .opskrifter img{
+        width: 60%;
+        height: auto;
+        padding-bottom: 2rem;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .kampagne img{
+        width: 60%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .opskrifter h2{
+        font-size: 2rem;
+    }
+
+    .kampagne p{
+        padding: 0 14rem 2rem 14rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .kampagne h2{
+        font-size: 2rem;
+    }
+
+    footer{
+        position: relative;;
+        top: 0;
+        width: 100%;
+    }
+
+    .intro p{
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        max-width: 80%;
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .footer-content section {
+        width: 33%;
+    }
+
+    .footer-content > section:nth-child(2) {
+        order: 1;
+    }
+
+    .footer-content > div {
+        order: 2;
+        align-self: center;
+    }
+
+    .footer-content > section:first-child {
+        order: 3;
+    }  
+
+    .footer-content img {
+        order: 3;
+        margin: 1em 0 0 0;
+        max-height: 4em; 
+    }
+
+}
+
+/* Computer screen */
+@media screen and (min-width: 1024px) {
+    
+
+    .hide-computer {
+        display: none;
+    }
+
+    .show-computer {
+        display: block;
+    }
+}
+
+/* Large computer screen */
+@media screen and (min-width: 1220px) { 
+
+    .kampagne p{
+        padding: 0 15rem 2rem 15rem;
+    }
+
+}
+
+/*---------------------------------------------------------
+                        Keyframes
+---------------------------------------------------------*/
+
+@keyframes fadeUp { 
+    0%{
+        transform: translateY(2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes scale { 
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes grow { 
+    0%{
+        width: 0;
+    }
+    100%{
+        opacity: 1;
+        width: 100%;
+    }
+}
+
